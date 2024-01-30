@@ -1,13 +1,11 @@
 ﻿@model ForumViewModel
 
-
-
 <div class="content-wrapper">
     <div class="content-header" style="margin-left:1%;">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="row" style="display:block">
-                    <button type="button" class="btn btn-secondary text-white" data-toggle="modal" data-target="#projectCriarForum">Iniciar Novo Fórum</button>
+                    <button type="button" class="btn btn-secondary text-white" data-toggle="modal" data-target="#projectComentados" onclick="CarregarIdTopico('@Model.RespostasForuns.Select(id => id.IdTopico).FirstOrDefault()')" style="font-weight: bold; ">Comentar</button>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -16,62 +14,46 @@
             </div>
         </div>
     </div>
-
     <div class="content">
-        <div class="container-fluid">
+        <div class="container-fluid" style="max-height:8rem">
             <div class="row">
                 <div class="col-lg-12">
                     @foreach (var resposta in Model.RespostasForuns)
                     {
-                        @* Destinatário *@
-                        <div class="card bg-light mb-3" style="max-width: 98rem">
-                            <div class="card-body" style="background:#D3DEDC">
-                                <h5 class="card-title"></h5>
-                                <p class="card-text">
-                                    <div class="media forum-item">
-
-                                        <div class="media-body">
-                                            <div class="row">
-
-
-                                                <div class="col-md-10">
-                                                    <h5>
-                                                        @resposta.Mensagem
-                                                    </h5>
-                                                    <br />
-                                                    <button class="text-muted" data-toggle="modal" data-target="#projectComentarForum" onclick="CarregarIdTopico('@resposta.IdTopico)" style="font-weight: bold">Comentar</button>
-                                                </div>
-
-
-
-                                                <div class="col-md-2 border-left">
-
-                                                    <div class="text-secondary">
-                                                        <a href="#" data-toggle="collapse" data-target=".forum-content"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-circle" width="50" alt="User" /></a>
-                                                    </div>
-                                                    <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">@resposta.IdAutorNavigation.Nome</a></h6>
-                                                    <p>@resposta.IdAutorNavigation.Conveniados.Select(n => n.NomConveniado).FirstOrDefault()</p>
-                                                    <div class="text-muted small text-center align-self-center d:inline" style="padding-top:50px; margin-left:auto;">
-                                                        <span class="message-data-time text-sm-left mr-3" style="">@resposta.DataResposta</span>
-                                                        <span><i class="far fa-comment ml-2"></i> 3</span>
-                                                    </div>
-                                                </div>
+                        <div class="card">
+                            <div class="card-body" style="background:#D3DEDC; ">
+                                <div class="row">
+                                    <div class="content" style="width: 100%; margin-left:20px;">
+                                        <div class="media forum-item">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-circle" width="40" alt="User">
+                                            <div class="media-body border-right border-bottom border-color:bg-black" style="max-width:200px;">
+                                                <h6 class="small" >@resposta.IdAutorNavigation.Nome</h6>
+                                                <p class="small">@resposta.IdAutorNavigation.Conveniados.Select(n => n.NomConveniado).FirstOrDefault()</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <p>@resposta.Mensagem</p>
+                                        </div>
+                                        <div class="media forum-item">
+                                            <div class="mt-3">
+                                                <a class="text-muted" data-toggle="modal" data-target="#projectComentarForum" onclick="CarregarIdTopico('@resposta.IdTopico')" style="font-weight: bold; ">Comentar</a>
+                                            </div>
+                                            <div class="text-muted small text-center align-self-center" style="margin-left:85%">
+                                                <span class="message-data-time">@resposta.DataResposta</span>
                                             </div>
                                         </div>
                                     </div>
-                                </p>
+                                </div>
                             </div>
                         </div>
                     }
-
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<partial name="../Shared/PartialViews/_ModalCreateForum.cshtml" model="@Model" />
-<partial name="../Shared/PartialViews/_ModalComentarForum.cshtml" model="@Model" />
+<partial name="../Shared/PartialViews/_ModalComentados.cshtml" model="@Model" />
 
 
 <script>
@@ -82,8 +64,8 @@
     //     modal.find('#hiddenIdTopico').val(idTopico);
     // });
 
-    function CarregarIdTopico(IdForum) {
-        $('#idForum').val(IdForum);
+    function CarregarIdTopico(IdTopico) {
+        $('#IdTopico').val(IdTopico);
     }
 
 </script>
