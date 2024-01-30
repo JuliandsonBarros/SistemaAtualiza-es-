@@ -1,0 +1,155 @@
+﻿@model ProjetoListViewModel
+
+
+@{
+    ViewData["Title"] = "Projeto";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h class="m-0 text-dark">Mantenha nossos sistemas atualizados</h>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+
+
+    @if (Model.CondicaoMsg == true)
+    {
+        <div>
+            <label>Projeto Cadastrado</label>
+        </div>
+
+    }
+
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="content" style="width: 100%;">
+                                    <div class="card">
+                                        <div class="card-body" style="width: 100%">
+                                            <div class="row" style="margin-right:auto;">
+                                                <div class=" col-lg-12 d-flex">
+                                                    <div class="card bg-light mb-3" style="width: 18%;">
+                                                        <div class="card-body">
+                                                            <h1 class="card-title">@Model.Projeto.NomProjeto </h1>
+                                                            <br>
+
+                                                            <p class="card-text">Versão Atual: <strong>@(Model.Pacotes.OrderByDescending(p => p.IdPacote).Select(v => v.NumVersao).FirstOrDefault() ?? "Não pacotes de atualizações.")</strong></p>
+                                                        </div>
+                                                    </div>
+                                                    @if(Model.Usuario != null && Model.Usuario.IdNivAcesso == 1)
+                                                    {
+                                                    <div class="ml-auto p-2 bd-highlight botao-alinhado">
+                                                        <div class="row" style="display:block">
+                                                            <button type="button" class="btn btn-secondary text-white" data-toggle="modal" data-target="#projectModal">Nova Versão</button>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="content" style="width: 100%;">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <table class="table table-bordered ">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Versão</th>
+                                                                    <th scope="col">Data Atualização</th>
+                                                                    <th scope="col">Registro Alterações</th>
+                                                                    <th scope="col">Ações</th>
+                                                                </tr>
+                                                            </thead>
+                                                            @foreach (var p in @Model.Pacotes)
+                                                            {
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td hidden> @p.IdPacote</td>
+                                                                        <td> @p.NumVersao</td>
+                                                                        <td>@p.DtLancamento.ToString()</td>
+                                                                        <td>@p.RegistroAlteracoes</td>
+                                                                        <td>
+                                                                            <a class="btn btn-secondary mr-1"  href="@Url.Action("Download", "PacotesAtualizacoes", new { id = p.IdPacote })"><i class="fa-solid  fa-file-arrow-down"></i></a>
+                                                                            <!--<button class="btn btn-secondary mr-1" asp-controller="Projetos" asp-action="Details"></i></button>-->
+                                                                            @if(Model.Usuario != null && Model.Usuario.IdNivAcesso == 1)
+                                                                            {
+                                                                                <button class="btn btn-warning mr-1 text-white" onclick="carregaModalEditar(this)" data-toggle="modal" data-target="#projectMod" data-id-pacote="@p.IdPacote">
+                                                                                    <i class="fa-solid fa-pen-to-square"></i>
+                                                                                </button>
+
+                                                                                <button class="btn btn-danger" asp-controller="Projetos" asp-action="Details"><i class="fa-regular fa-trash-can"></i></button>
+                                                                            }
+                                                                      </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            }
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.col-md-6 -->
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
+    </div>
+</div>
+
+<partial name="../Shared/PartialViews/_ModalCreate.cshtml" model="@Model" />
+<partial name="../Shared/PartialViews/_ModalEdit.cshtml" model="@Model" />
+
+<script>
+    function carregaModalEditar(elem) {
+
+        var idPacote = $(elem).parent().prev().prev().prev().prev().text();
+        var versao = $(elem).parent().prev().prev().prev().text();
+        var dataInicial = $(elem).parent().prev().prev().text();
+        var arrDataInicial = dataInicial.split('/');
+        var dataInicialFormatada = arrDataInicial[2].trim() + "-" + arrDataInicial[1].trim() + "-" + arrDataInicial[0].trim();
+        var registro = $(elem).parent().prev().text();
+
+        $('#idPac').val(idPacote);
+
+        $('#versao').val(versao);
+
+        $('#data').val(dataInicial);
+
+        $('#regAlt').val(registro);
+    }
+</script>
+
+
+
+
+

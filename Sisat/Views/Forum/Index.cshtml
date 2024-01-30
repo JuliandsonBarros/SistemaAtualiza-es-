@@ -1,0 +1,100 @@
+﻿@model ForumViewModel
+
+<div class="content-wrapper">
+    <div class="content-header" style="margin-left:1%;">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="row" style="display:block">
+                    <button type="button" class="btn btn-secondary text-white" data-toggle="modal" data-target="#projectCriarForum">Iniciar Novo Fórum</button>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    @foreach (var forum in Model.Foruns)
+                    {
+                        <div class="card nav-link">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card bg-light mb-3" style="max-width: 98rem;">
+                                            <div class="card-body">
+                                                <h5 class="card-title"></h5>
+                                                <p class="card-text">
+                                                    <div class="media forum-item">
+                                                        <a href="#" data-toggle="collapse" data-target=".forum-content"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-circle" width="50" alt="User" /></a>
+                                                        <div class="media-body">
+                                                            <div class="row">
+                                                                <div class="col-md-2 border-right">
+
+                                                                    <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">@Model.Usuario.Nome</h6>
+                                                                    @*  <p>@chat.Chats.IdRemetenteNavigation.Conveniados.Select(n => n.NomConveniado).FirstOrDefault()</p> *@
+                                                                    @*  <p>@chat.Chats.IdRemetenteNavigation.Conveniados.Select(n => n.NomConveniado).FirstOrDefault()</p> *@
+                                                                    <p>@Model.Usuario.Conveniados.Select(n => n.NomConveniado).FirstOrDefault()</p>
+
+                                                                    <div class="text-muted small text-center align-self-center d:inline" style="padding-top:200px; margin-left:10PX;">
+                                                                        <span class="message-data-time text-sm-left mr-3" style="">@forum.DataPostagem</span>
+                                                                        <span><i class="far fa-comment ml-2"></i> 3</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-10">
+                                                                    <h3 class="text-secondary">
+                                                                        @forum.Titulo
+                                                                    </h3>
+                                                                    <h5>
+                                                                        @forum.Conteudo
+                                                                    </h5>
+                                                                    <br />
+                                                                    <a class="text-muted" data-toggle="modal" data-target="#projectComentarForum" onclick="CarregarIdTopico('@forum.IdForum')" style='font-weight: bold'>Comentar</a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<partial name="../Shared/PartialViews/_ModalCreateForum.cshtml" model="@Model" />
+<partial name="../Shared/PartialViews/_ModalComentarForum.cshtml" model="@Model" />
+
+
+<script>
+    // $('#projectComentarForum').on('show.bs.modal', function (event) {
+    //     var button = $(event.relatedTarget);
+    //     var idTopico = button.data('id');
+    //     var modal = $(this);
+    //     modal.find('#hiddenIdTopico').val(idTopico);
+    // });
+
+    function CarregarIdTopico(idForum) {
+        console.log(idForum);
+        $('#IdForum').val(idForum);
+    }
+
+</script>
+
+
+
+
+

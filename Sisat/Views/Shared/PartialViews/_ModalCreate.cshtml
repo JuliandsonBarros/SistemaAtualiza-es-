@@ -1,0 +1,53 @@
+﻿@model ProjetoListViewModel
+
+<div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel">Salvar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+           
+                <div class="modal-body">
+                    <!-- Formulário para cadastro/alteração -->
+                    <form asp-controller="PacotesAtualizacoes" asp-action="Create" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>Nome: </label>
+                            <select asp-for="Pacote.IdProj" class="form-control" placeholder="Nome Projeto" required>
+                              <option value="@Model.Projeto.IdProjeto">@Model.Projeto.NomProjeto</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label >Versão: </label>
+                            <input asp-for="Pacote.NumVersao" class="form-control"  placeholder="Numero Versão"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Data: </label>
+                            <input type="date" asp-for="Pacote.DtLancamento" class="form-control"  />
+                            
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"></label>
+                            <textarea asp-for="Pacote.RegistroAlteracoes" class="form-control" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group ml-3">
+                            <label for="project-file">Selecionar Arquivo: </label>
+                            <input name="arquivo" type="file" class="form-control-file" id="project-file-atualizacao">
+                        </div>
+
+                        <div class="modal-footer">
+                            <div class="form-group">
+                                <input type="submit" value="Salvar" class="btn btn-secondary" />
+                            </div>
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
+

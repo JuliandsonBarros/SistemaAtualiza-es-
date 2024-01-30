@@ -1,0 +1,9 @@
+﻿.botao-alinhado {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+}
+
+.card-body {
+    position: relative;
+}

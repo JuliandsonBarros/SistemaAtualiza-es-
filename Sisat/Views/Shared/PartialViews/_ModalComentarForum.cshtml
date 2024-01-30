@@ -1,0 +1,37 @@
+﻿@model ForumViewModel
+
+<div class="modal fade" id="projectComentarForum" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel">Comentar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+            <div class="modal-body">
+                <form asp-controller="RespostasForum" asp-action="AdicionaResposta" method="post">
+
+                    <input type="hidden" name="id" id="IdForum" />
+
+                    <input hidden type="datetime" asp-for="RespostaForum.DataResposta" />
+
+                    <label>Descreva seu Comentário: </label>
+                    <div class="form-group">
+                        <label class="control-label"></label>
+                        <textarea type="text" name="mensagemResposta" class="form-control" rows="3"></textarea>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-secondary">Enviar</button>
+                        </div>
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

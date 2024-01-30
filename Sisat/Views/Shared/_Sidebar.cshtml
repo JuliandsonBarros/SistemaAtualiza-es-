@@ -1,0 +1,31 @@
+﻿@model BaseViewModel
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="margin-bottom: -1;">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+
+        <span class="brand-text font-weight-bold" style="text-decoration:dashed">Sisat</span>
+    </a>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+            @{
+                var listProjeto = Model.HomeProjeto();
+            }
+
+            @foreach (var proj in listProjeto)
+            {
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Projetos" asp-action="Details" asp-route-id="@proj.Projeto.IdProjeto">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            @proj.Projeto.NomProjeto
+                        </p>
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+</aside>

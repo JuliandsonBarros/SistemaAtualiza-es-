@@ -1,0 +1,86 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\NovaPasta\**" />
+    <Compile Remove="NovaPasta\**" />
+    <Compile Remove="Views\RespostaForum\**" />
+    <Content Remove="Models\NovaPasta\**" />
+    <Content Remove="NovaPasta\**" />
+    <Content Remove="Views\RespostaForum\**" />
+    <EmbeddedResource Remove="Models\NovaPasta\**" />
+    <EmbeddedResource Remove="NovaPasta\**" />
+    <EmbeddedResource Remove="Views\RespostaForum\**" />
+    <None Remove="Models\NovaPasta\**" />
+    <None Remove="NovaPasta\**" />
+    <None Remove="Views\RespostaForum\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\ChatController.cs" />
+    <Compile Remove="Controllers\RespostaForumController.cs" />
+    <Compile Remove="Controllers\_context.cs" />
+    <Compile Remove="Models\Class.cs" />
+    <Compile Remove="Views\Home\HomeController.cs" />
+    <Compile Remove="Views\Shared\PartialViews\_ModalDeleteProjeto.cs" />
+    <Compile Remove="Views\Shared\PartialViews\_ModalEditProjeto.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\Home.cshtml" />
+    <Content Remove="Views\Projetos\HomeCard.cshtml" />
+    <Content Remove="Views\Projetos\Index1.cshtml" />
+    <Content Remove="wwwroot\assets\img\entity.png" />
+    <Content Remove="wwwroot\css\site.css" />
+    <Content Remove="wwwroot\js\chamaArquivo.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Shared\PartialViews\_ModalEdit.cshtml~RF641841ff.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\fontawesome\js\all.js" />
+    <None Include="wwwroot\assets\fontawesome\js\all.min.js" />
+    <None Include="wwwroot\assets\fontawesome\js\brands.js" />
+    <None Include="wwwroot\assets\fontawesome\js\brands.min.js" />
+    <None Include="wwwroot\assets\fontawesome\js\conflict-detection.js" />
+    <None Include="wwwroot\assets\fontawesome\js\conflict-detection.min.js" />
+    <None Include="wwwroot\assets\fontawesome\js\fontawesome.js" />
+    <None Include="wwwroot\assets\fontawesome\js\fontawesome.min.js" />
+    <None Include="wwwroot\assets\fontawesome\js\regular.js" />
+    <None Include="wwwroot\assets\fontawesome\js\regular.min.js" />
+    <None Include="wwwroot\assets\fontawesome\js\solid.js" />
+    <None Include="wwwroot\assets\fontawesome\js\solid.min.js" />
+    <None Include="wwwroot\assets\fontawesome\js\v4-shims.js" />
+    <None Include="wwwroot\assets\fontawesome\js\v4-shims.min.js" />
+    <None Include="wwwroot\assets\fontawesome\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\assets\fontawesome\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\assets\fontawesome\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\assets\fontawesome\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\assets\fontawesome\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\assets\fontawesome\webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\arquivos\" />
+    <Folder Include="wwwroot\arquivos\1\" />
+    <Folder Include="wwwroot\arquivos\2\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,42 @@
+﻿@model ForumViewModel
+
+<div class="modal fade" id="projectCriarForum" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel">Cadastrar Novo Fórum</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+            <div class="modal-body">
+                <!-- Formulário para cadastro/alteração -->
+                <form asp-controller="Forum" asp-action="EnviaMensagem" method="post">
+
+                    <input hidden asp-for="Forum.IdAutor" value="IdUsuario" />   
+                    <input hidden type="datetime" asp-for="Forum.DataPostagem" />
+
+                    <div class="form-group">
+                        <label>Titulo: </label>
+                        <input type="text" name="titulo" class="form-control" />
+                    </div>
+                    <label>Descreva seu Comentário: </label>
+                    <div class="form-group">
+                        <label class="control-label"></label>
+                        <textarea type="text" name="textoMensagem" class="form-control" rows="3"></textarea>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="form-group">
+                            <input type="submit" value="Comentar" class="btn btn-secondary" />
+
+                        </div>
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

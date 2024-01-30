@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sisat</title>
+
+    <link href="@Url.Content("~/assets/fontawesome/css/fontawesome.css")" rel="stylesheet" type="text/css">
+
+    <link href="@Url.Content("~/assets/fontawesome/css/brands.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("~/assets/fontawesome/css/solid.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("~/assets/fontawesome/css/regular.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("~/assets/fontawesome/css/brands.css")" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="~/Adminlte/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/Adminlte/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="~/css/sidebar.css">
+    <link rel="stylesheet" href="~/css/icons/all.css">
+    <link rel="stylesheet" href="~/css/icons.css" />
+    <link rel="stylesheet" href="~/css/chat.css" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+</head>
+
+<body style="margin-top:0">
+
+    <partial name="_Navbar" model="@Model" />
+    <partial name="_Sidebar" />
+
+    @RenderBody()
+    <partial name="_Footer" />
+
+    <script>
+        function showInputField() {
+            document.getElementById("inputField").style.display = "block";
+        }
+
+        function submitProjectName() {
+            var projectName = document.getElementById("projectName").value;
+            console.log("Project Name Submitted: " + projectName);
+        }
+    </script>
+
+    <script src="@Url.Content("~/assets/fontawesome/js/fontawesome.js")"></script>
+    <script src="@Url.Content("~/assets/fontawesome/js/solid.js")"></script>
+    <script src="@Url.Content("~/assets/fontawesome/js/regular.js")"></script>
+    <script src="@Url.Content("~/assets/fontawesome/js/brands.js")"></script>
+
+
+
+    <script src="~/js/popularArquivo.js"></script>
+    <script src="~/Adminlte/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Adminlte/dist/js/adminlte.min.js"></script>
+    ﻿
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

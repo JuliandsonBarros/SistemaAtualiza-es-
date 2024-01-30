@@ -1,0 +1,121 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Sisat
+build_property.RootNamespace = Sisat
+build_property.ProjectDir = C:\Users\Lenovo\Downloads\Sist_Ultimate-main\Sist_Ultimate-main\Sisat\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Lenovo\Downloads\Sist_Ultimate-main\Sist_Ultimate-main\Sisat
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Forum/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ydW1cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/PacotesAtualizacoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjb3Rlc0F0dWFsaXphY29lc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/PacotesAtualizacoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjb3Rlc0F0dWFsaXphY29lc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/PacotesAtualizacoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjb3Rlc0F0dWFsaXphY29lc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/PacotesAtualizacoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjb3Rlc0F0dWFsaXphY29lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Projetos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamV0b3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Projetos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamV0b3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/RespostasForum/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzcG9zdGFzRm9ydW1cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/PartialViews/_ModalComentarForum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3c1xfTW9kYWxDb21lbnRhckZvcnVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/PartialViews/_ModalCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3c1xfTW9kYWxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/PartialViews/_ModalCreateForum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3c1xfTW9kYWxDcmVhdGVGb3J1bS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/PartialViews/_ModalCreateProjeto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3c1xfTW9kYWxDcmVhdGVQcm9qZXRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/PartialViews/_ModalDeleteProjeto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3c1xfTW9kYWxEZWxldGVQcm9qZXRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/PartialViews/_ModalEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3c1xfTW9kYWxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/PartialViews/_ModalEditarProjeto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3c1xfTW9kYWxFZGl0YXJQcm9qZXRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/_Navbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/_Sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-u12ohttg6j
+
+[C:/Users/Lenovo/Downloads/Sist_Ultimate-main/Sist_Ultimate-main/Sisat/Views/Shared/_LayoutDeslogada.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXREZXNsb2dhZGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-40ielh1bqx
