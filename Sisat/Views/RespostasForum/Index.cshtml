@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="row" style="display:block">
-                    <button type="button" class="btn btn-secondary text-white" data-toggle="modal" data-target="#projectComentados" onclick="CarregarIdTopico('@Model.RespostasForuns.Select(id => id.IdTopico).FirstOrDefault()')" style="font-weight: bold; ">Comentar</button>
+                    <button type="button" class="btn btn-secondary text-white" data-toggle="modal" data-target="#projectComentados" onclick="CarregarIdTopico('@Model.RespostasForuns.Select(r => r.IdTopico).FirstOrDefault()','resposta')" style="font-weight: bold; ">Comentar</button>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -36,7 +36,7 @@
                                         </div>
                                         <div class="media forum-item">
                                             <div class="mt-3">
-                                                <a class="text-muted" data-toggle="modal" data-target="#projectComentarForum" onclick="CarregarIdTopico('@resposta.IdTopico')" style="font-weight: bold; ">Comentar</a>
+                                                <a class="text-muted" data-toggle="modal" data-target="#projectComentados" onclick="CarregarIdTopico('@resposta.IdTopico','resposta')" style="font-weight: bold;">Comentar</a>
                                             </div>
                                             <div class="text-muted small text-center align-self-center" style="margin-left:85%">
                                                 <span class="message-data-time">@resposta.DataResposta</span>
@@ -55,19 +55,19 @@
 
 <partial name="../Shared/PartialViews/_ModalComentados.cshtml" model="@Model" />
 
-
 <script>
-    // $('#projectComentarForum').on('show.bs.modal', function (event) {
-    //     var button = $(event.relatedTarget);
-    //     var idTopico = button.data('id');
-    //     var modal = $(this);
-    //     modal.find('#hiddenIdTopico').val(idTopico);
-    // });
+    // function CarregarIdTopico(idForum) {
+    //     console.log(idForum);
+    //         $('#IdForum').val(idForum);
+    // }
 
-    function CarregarIdTopico(IdTopico) {
-        $('#IdTopico').val(IdTopico);
+    function CarregarIdTopico(id, tipo) {
+        if (tipo === 'forum') {
+            $('#IdForum').val(id);
+        } else if (tipo === 'resposta') {
+            $('#IdTopico').val(id);
+        }
     }
-
 </script>
 
 

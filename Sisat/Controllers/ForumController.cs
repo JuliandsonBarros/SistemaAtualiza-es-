@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Sisat.Models;
 using Sisat.ViewModels;
 
@@ -19,9 +20,10 @@ namespace Sisat.Controllers
             _forumViewModel = forumViewModel;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(long id)
         {
             _forumViewModel.Foruns = _context.Forum
+                   .Where(t =>  t.IdForum == t.IdAutor || id == _forumViewModel.Usuario.Id)
                   .OrderBy(f => f.DataPostagem)
                   .ToList();
 
