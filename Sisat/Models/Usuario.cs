@@ -42,7 +42,8 @@ namespace Sisat.Models
         [InverseProperty("IdAutorNavigation")]
         public virtual ICollection<RespostasForum> RespostasForum { get; set; }
 
-        public virtual Forum ForumUsuario { get; set; }
+        [InverseProperty("UsuarioForum")]
+        public virtual ICollection<Forum> ForumUsuario { get; set; }
 
         public bool SenhaValida(string senha)
         {

@@ -24,6 +24,8 @@ namespace Sisat.Models
         [Column("Data_Postagem", TypeName = "datetime")]
         public DateTime? DataPostagem { get; set; }
 
+        [ForeignKey(nameof(IdAutor))]
+        [InverseProperty(nameof(Usuario.Id))]
         public virtual Usuario UsuarioForum { get; set; }
 
         [InverseProperty("IdTopicoNavigation")]
