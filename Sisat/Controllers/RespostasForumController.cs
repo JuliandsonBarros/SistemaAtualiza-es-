@@ -41,7 +41,8 @@ namespace Sisat.Controllers
                 IdAutorResposta = _forumViewModel.Usuario.Id,
                 IdTopico = id,
                 Mensagem = mensagemResposta,
-                DataResposta = DateTime.Now
+                DataResposta = DateTime.Now,
+                Visualizacao = false
             };
 
             _context.RespostasForum.Add(resposta);

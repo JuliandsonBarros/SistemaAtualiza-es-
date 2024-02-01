@@ -24,6 +24,8 @@ namespace Sisat.Models
         [Column("Data_Postagem", TypeName = "datetime")]
         public DateTime? DataPostagem { get; set; }
 
+        public virtual Usuario UsuarioForum { get; set; }
+
         [InverseProperty("IdTopicoNavigation")]
         public virtual ICollection<RespostasForum> RespostasForum { get; set; }
     }

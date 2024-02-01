@@ -20,12 +20,12 @@ namespace Sisat.Controllers
             _forumViewModel = forumViewModel;
         }
 
-        public IActionResult Index(long id)
+        public IActionResult Index()
         {
             _forumViewModel.Foruns = _context.Forum
-                   .Where(t =>  t.IdForum == t.IdAutor || id == _forumViewModel.Usuario.Id)
-                  .OrderBy(f => f.DataPostagem)
-                  .ToList();
+                   .Include(x => x.RespostasForum)
+                        .OrderBy(f => f.DataPostagem)
+                        .ToList();
 
             return View(_forumViewModel);
         }

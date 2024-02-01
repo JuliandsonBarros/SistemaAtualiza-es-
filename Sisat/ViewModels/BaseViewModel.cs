@@ -56,7 +56,6 @@ namespace Sisat.ViewModels
             }
         }
 
-
         public void Logout(HttpContext httpContext)
         {
             UsuarioMemoria = null;

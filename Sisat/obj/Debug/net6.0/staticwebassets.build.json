@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vBJRs9RbTKBvq3eJBb9lijsi+AAzudLPjNO0EYtYEyo=",
+  "Hash": "wffTmLug8xmOvJSy7q97d+WUnzNGesx+iuZfOMEPed4=",
   "Source": "Sisat",
   "BasePath": "_content/Sisat",
   "Mode": "Default",
@@ -31569,6 +31569,23 @@
       "OriginalItemSpec": "wwwroot\\Adminlte\\plugins\\toastr\\toastr.min.js"
     },
     {
+      "Identity": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\arquivos\\1\\01 (6).zip",
+      "SourceId": "Sisat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\",
+      "BasePath": "_content/Sisat",
+      "RelativePath": "arquivos/1/01 (6).zip",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\arquivos\\1\\01 (6).zip"
+    },
+    {
       "Identity": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\arquivos\\1\\01.zip",
       "SourceId": "Sisat",
       "SourceType": "Discovered",
@@ -31603,6 +31620,23 @@
       "OriginalItemSpec": "wwwroot\\arquivos\\1\\03.zip"
     },
     {
+      "Identity": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\arquivos\\1\\Ata de audiencia.pdf",
+      "SourceId": "Sisat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\",
+      "BasePath": "_content/Sisat",
+      "RelativePath": "arquivos/1/Ata de audiencia.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\arquivos\\1\\Ata de audiencia.pdf"
+    },
+    {
       "Identity": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\arquivos\\1\\exercicio03 (4).docx",
       "SourceId": "Sisat",
       "SourceType": "Discovered",
@@ -31620,6 +31654,23 @@
       "OriginalItemSpec": "wwwroot\\arquivos\\1\\exercicio03 (4).docx"
     },
     {
+      "Identity": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\arquivos\\2\\01 (10).zip",
+      "SourceId": "Sisat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\",
+      "BasePath": "_content/Sisat",
+      "RelativePath": "arquivos/2/01 (10).zip",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\arquivos\\2\\01 (10).zip"
+    },
+    {
       "Identity": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\arquivos\\2\\02.zip",
       "SourceId": "Sisat",
       "SourceType": "Discovered",
@@ -31635,6 +31686,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\arquivos\\2\\02.zip"
+    },
+    {
+      "Identity": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\arquivos\\4\\01 (6) (1).zip",
+      "SourceId": "Sisat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\",
+      "BasePath": "_content/Sisat",
+      "RelativePath": "arquivos/4/01 (6) (1).zip",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\arquivos\\4\\01 (6) (1).zip"
     },
     {
       "Identity": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\assets\\fontawesome\\css\\all.css",
