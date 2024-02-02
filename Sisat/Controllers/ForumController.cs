@@ -23,7 +23,7 @@ namespace Sisat.Controllers
         public IActionResult Index()
         {
             _forumViewModel.Foruns = _context.Forum
-                   .Include(x => x.RespostasForum)
+                   .Include(x => x.IdAutorNavigation)
                         .OrderBy(f => f.DataPostagem)
                         .ToList();
 

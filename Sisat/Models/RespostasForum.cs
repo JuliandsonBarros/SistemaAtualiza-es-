@@ -22,7 +22,7 @@ namespace Sisat.Models
         public bool? Visualizacao { get; set; }
 
         [ForeignKey(nameof(IdAutorResposta))]
-        [InverseProperty(nameof(Usuario.RespostasForum))]
+        [InverseProperty(nameof(Usuario.Respostas))]
         public virtual Usuario IdAutorNavigation { get; set; } = null!;
         [ForeignKey(nameof(IdTopico))]
         [InverseProperty(nameof(Forum.RespostasForum))]

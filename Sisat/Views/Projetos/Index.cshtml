@@ -49,7 +49,7 @@
                                                             {
                                                                 @:N/A versões.
                                                                 <button type="button" class="ml-1" style="border:hidden;" onclick="CarregarProjeto('@item.Projeto.NomProjeto','@item.Projeto.IdProjeto')" data-toggle="modal" data-target="#projectModalEditarProjeto"><i class="fa-solid  fa-pen-to-square cor-icon-edit"></i></button>
-                                                                <button type="button" class="ml-1" style=" border:hidden;"><i class="fa-regular fa-trash-can cor-icon-delete"></i></button>
+                                                            <button type="button" class="ml-1" style=" border:hidden;" onclick="CarregarProjetoDelete('@item.Projeto.IdProjeto')" data-toggle="modal" data-target="#projectModalDeleteProjeto"><i class="fa-regular fa-trash-can cor-icon-delete"></i></button>
                                                             }
                                                         </strong>
                                                     </p>
@@ -68,6 +68,7 @@
 </div>
 <partial name="../Shared/PartialViews/_ModalCreateProjeto.cshtml" model="@Model" />
 <partial name="../Shared/PartialViews/_ModalEditarProjeto.cshtml" model="@Model" />
+<partial name="../Shared/PartialViews/_ModalDeleteProjeto.cshtml" model="@Model" />
 
 
 <script>
@@ -75,6 +76,12 @@
     { 
         $('#proj').val(projeto);
         $('#idProjeto').val(idProjeto);
+    }
+</script>
+
+<script>
+    function CarregarProjetoDelete(idProjetoDelete) {
+        $('#idProjetoDelete').val(idProjetoDelete);
     }
 </script>
 

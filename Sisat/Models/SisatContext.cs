@@ -25,22 +25,20 @@ namespace Sisat.Models
         public virtual DbSet<RespostasForum> RespostasForum { get; set; } = null!;
         public virtual DbSet<Usuario> Usuario { get; set; } = null!;
 
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                //optionsBuilder.UseSqlServer("data Source=HOME_PC\\SQLEXPRESS;Initial Catalog=Teste002; Integrated Security=True;");
                 optionsBuilder.UseSqlServer("data Source=CPADSI39\\sqlexpress;Initial Catalog=SistemaAtualizacoes; Integrated Security=True;");
             }
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Conveniados>(entity =>
             {
                 entity.HasKey(e => e.IdConveniado)
-                    .HasName("PK__Convenia__24F606D1AD79651A");
+                    .HasName("PK__Convenia__24F606D12ADBD314");
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Conveniados)
@@ -51,7 +49,7 @@ namespace Sisat.Models
             modelBuilder.Entity<ConvenioProjeto>(entity =>
             {
                 entity.HasKey(e => new { e.IdCon, e.IdProj })
-                    .HasName("PK__Convenio__1D45BDBD778EE64B");
+                    .HasName("PK__Convenio__1D45BDBD60983BAD");
 
                 entity.Property(e => e.IdConProj).ValueGeneratedOnAdd();
 
@@ -62,10 +60,18 @@ namespace Sisat.Models
                     .HasConstraintName("FK_ID_CONVENIADO");
             });
 
+            modelBuilder.Entity<Forum>(entity =>
+            {
+                entity.HasOne(d => d.IdAutorNavigation)
+                    .WithMany(p => p.Forum)
+                    .HasForeignKey(d => d.IdAutor)
+                    .HasConstraintName("FK_Forum_Usuario");
+            });
+
             modelBuilder.Entity<NivelDeAcesso>(entity =>
             {
                 entity.HasKey(e => e.IdNivelAcesso)
-                    .HasName("PK__NivelDeA__6CF663574C169F98");
+                    .HasName("PK__NivelDeA__6CF66357A4B8F4E1");
 
                 entity.Property(e => e.IdNivelAcesso).ValueGeneratedNever();
             });
@@ -73,7 +79,7 @@ namespace Sisat.Models
             modelBuilder.Entity<PacotesAtualizacoes>(entity =>
             {
                 entity.HasKey(e => e.IdPacote)
-                    .HasName("PK__Pacotes___B2C7136C44F19D13");
+                    .HasName("PK__Pacotes___B2C7136CD2625C65");
 
                 entity.Property(e => e.Ativo).HasDefaultValueSql("((1))");
 
@@ -86,13 +92,13 @@ namespace Sisat.Models
             modelBuilder.Entity<Projetos>(entity =>
             {
                 entity.HasKey(e => e.IdProjeto)
-                    .HasName("PK__Projetos__6701DEA982A41A27");
+                    .HasName("PK__Projetos__6701DEA94750DD65");
             });
 
             modelBuilder.Entity<RespostasForum>(entity =>
             {
                 entity.HasOne(d => d.IdAutorNavigation)
-                    .WithMany(p => p.RespostasForum)
+                    .WithMany(p => p.Respostas)
                     .HasForeignKey(d => d.IdAutorResposta)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Respostas_Forum_Autor");
@@ -109,7 +115,7 @@ namespace Sisat.Models
                 entity.HasOne(d => d.IdNivAcessoNavigation)
                     .WithMany(p => p.Usuario)
                     .HasForeignKey(d => d.IdNivAcesso)
-                    .HasConstraintName("FK__Usuario__Id_NivA__48CFD27E");
+                    .HasConstraintName("FK__Usuario__Id_NivA__4AB81AF0");
             });
 
             OnModelCreatingPartial(modelBuilder);
@@ -118,3 +124,4 @@ namespace Sisat.Models
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
+

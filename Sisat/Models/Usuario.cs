@@ -9,28 +9,25 @@ namespace Sisat.Models
         public Usuario()
         {
             Conveniados = new HashSet<Conveniados>();
+            Forum = new HashSet<Forum>();
+            Respostas = new HashSet<RespostasForum>();
         }
 
         [Key]
         [Column("ID")]
         public int Id { get; set; }
-
         [StringLength(256)]
         [Unicode(false)]
         public string Email { get; set; } = null!;
-
         [StringLength(256)]
         [Unicode(false)]
         public string Nome { get; set; } = null!;
-
         [StringLength(128)]
         [Unicode(false)]
         public string Senha { get; set; } = null!;
-
         [StringLength(255)]
         [Unicode(false)]
         public string? Login { get; set; }
-
         [Column("Id_NivAcesso")]
         public int? IdNivAcesso { get; set; }
 
@@ -40,10 +37,9 @@ namespace Sisat.Models
         [InverseProperty("IdUsuarioNavigation")]
         public virtual ICollection<Conveniados> Conveniados { get; set; }
         [InverseProperty("IdAutorNavigation")]
-        public virtual ICollection<RespostasForum> RespostasForum { get; set; }
-
-        [InverseProperty("UsuarioForum")]
-        public virtual ICollection<Forum> ForumUsuario { get; set; }
+        public virtual ICollection<Forum> Forum { get; set; }
+        [InverseProperty("IdAutorNavigation")]
+        public virtual ICollection<RespostasForum> Respostas { get; set; }
 
         public bool SenhaValida(string senha)
         {

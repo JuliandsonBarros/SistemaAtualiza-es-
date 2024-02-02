@@ -27,8 +27,8 @@
                                         <div class="media forum-item">
                                             <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-circle" width="40" alt="User">
                                             <div class="media-body border-color:red border-right border-bottom" style="max-width:200px;">
-                                                <h6 class="small">@forum.UsuarioForum.Nome</h6>
-                                                <p class="small">@forum.UsuarioForum.Conveniados.Select(x => x.NomConveniado).FirstOrDefault()</p>
+                                                <h6 class="small">@forum.IdAutorNavigation.Nome</h6>
+                                                <p class="small">@forum.IdAutorNavigation.Conveniados.Select(x => x.NomConveniado).FirstOrDefault()</p>
                                             </div>
                                             <div class="d-flex justify-content-between align-items-center mb-3 ml-3">
                                                 <h3 class="text-secondary">@forum.Titulo</h3>
@@ -43,7 +43,7 @@
                                                
                                                 <a asp-controller="RespostasForum" asp-action="Index" asp-route-id="@forum.IdForum" class="ml-1">
                                                     <i class="far fa-comment"></i>
-                                                    <spam>@forum.RespostasForum.Count</spam>
+                                                    <spam>@forum.RespostasForum.Count()</spam>
 
                                                     </a>
                                             </div>

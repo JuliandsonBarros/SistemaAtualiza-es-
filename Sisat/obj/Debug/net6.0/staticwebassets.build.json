@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wffTmLug8xmOvJSy7q97d+WUnzNGesx+iuZfOMEPed4=",
+  "Hash": "V8LnawLON+671jg+nkCQknz0cdixJIiD4Ztq1iDSVGc=",
   "Source": "Sisat",
   "BasePath": "_content/Sisat",
   "Mode": "Default",
@@ -31703,6 +31703,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\arquivos\\4\\01 (6) (1).zip"
+    },
+    {
+      "Identity": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\arquivos\\5\\02 (7).zip",
+      "SourceId": "Sisat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\",
+      "BasePath": "_content/Sisat",
+      "RelativePath": "arquivos/5/02 (7).zip",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\arquivos\\5\\02 (7).zip"
     },
     {
       "Identity": "C:\\Users\\juliandson.soares\\Documents\\workspace\\SistemaAtualizacoesProjeto\\SistemaAtualiza-es-\\Sisat\\wwwroot\\assets\\fontawesome\\css\\all.css",

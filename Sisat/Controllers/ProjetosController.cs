@@ -86,8 +86,22 @@ namespace Sisat.Controllers
             return RedirectToAction("Details", "Projetos", new { id = projeto.IdProjeto, createProjeto = true });
         }
 
-        
-       
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, ProjetoListViewModel projetoListViewModel)
+        {
+            var projetoExistente = _context.Projetos.FirstOrDefault(x => x.IdProjeto == id);
+
+            if(projetoExistente != null) 
+            {
+                projetoExistente.NomProjeto = projetoListViewModel.Projeto.NomProjeto;
+
+                _context.Update(projetoExistente);
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("Index", "Projetos");
+        }
+
         // GET: Projetos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -106,22 +120,6 @@ namespace Sisat.Controllers
             return View(projetos);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Edit(int id, ProjetoListViewModel projetoListViewModel)
-        {
-            var projetoExistente = _context.Projetos.FirstOrDefault(x => x.IdProjeto == id);
-
-            if(projetoExistente != null) 
-            {
-                projetoExistente.NomProjeto = projetoListViewModel.Projeto.NomProjeto;
-
-                _context.Update(projetoExistente);
-                _context.SaveChanges();
-            }
-
-            return RedirectToAction("Index", "Projetos");
-        }
-
         // POST: Projetos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -129,7 +127,7 @@ namespace Sisat.Controllers
         {
             if (_context.Projetos == null)
             {
-                return Problem("Entity set 'SisatContext.Projetos'  is null.");
+                return Problem("Problema ao deletar projeto");
             }
             var projetos = await _context.Projetos.FindAsync(id);
             if (projetos != null)

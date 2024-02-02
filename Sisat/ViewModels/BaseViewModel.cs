@@ -35,53 +35,11 @@ namespace Sisat.ViewModels
             }
         }
 
-        public List<RetornaForuns> ListaForuns()
-        {
-            using (var _context = new SisatContext())
-            {
-                var listaMensagens = _context.Forum
-                    .Include(rf => rf.RespostasForum)
-                    .ThenInclude(u => u.IdAutorNavigation)
-                    .ThenInclude(c => c.Conveniados)
-                    .Where(a => a.IdAutor == 1 || a.IdAutor == 2)
-                    .GroupBy(c => c.IdAutor)
-                    .Select(grupo => new RetornaForuns
-                    {
-                        Forum = grupo.OrderByDescending(c => c.DataPostagem).FirstOrDefault(),
-                        RetornaForum = grupo.OrderByDescending(c => c.DataPostagem).FirstOrDefault(),
-                    })
-                    .ToList();
-
-                return listaMensagens;
-            }
-        }
-
         public void Logout(HttpContext httpContext)
         {
             UsuarioMemoria = null;
             httpContext.Response.Redirect("/Index/Login");
         }
-    }
-
-
-
-    public class RetornaForuns
-    {
-        public Forum Forum { get; set; }
-
-        public Forum RetornaForum { get; set; }
-
-
-    }
-
-
-    public class RetornaRespostas
-    {
-        public RespostasForum Resposta { get; set; }
-
-        public RespostasForum RetornaResposta { get; set; }
-
-
     }
 
     public class ProjetoComUltimoPacote
