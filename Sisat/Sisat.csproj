@@ -8,16 +8,12 @@
 
   <ItemGroup>
     <Compile Remove="Models\NovaPasta\**" />
-    <Compile Remove="NovaPasta\**" />
     <Compile Remove="Views\RespostaForum\**" />
     <Content Remove="Models\NovaPasta\**" />
-    <Content Remove="NovaPasta\**" />
     <Content Remove="Views\RespostaForum\**" />
     <EmbeddedResource Remove="Models\NovaPasta\**" />
-    <EmbeddedResource Remove="NovaPasta\**" />
     <EmbeddedResource Remove="Views\RespostaForum\**" />
     <None Remove="Models\NovaPasta\**" />
-    <None Remove="NovaPasta\**" />
     <None Remove="Views\RespostaForum\**" />
   </ItemGroup>
 

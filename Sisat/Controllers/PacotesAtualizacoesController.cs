@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol.Plugins;
 using Sisat.Models;
+using Sisat.Services.InterfaceService;
 using Sisat.ViewModels;
 using SQLitePCL;
 
@@ -18,10 +20,13 @@ namespace Sisat.Controllers
 
         private readonly ProjetoListViewModel projetoListViewModel;
 
-        public PacotesAtualizacoesController(SisatContext context, ProjetoListViewModel _projetoListViewModel)
+        private readonly IEmailService _emailService;
+
+        public PacotesAtualizacoesController(SisatContext context, ProjetoListViewModel _projetoListViewModel, IEmailService emailService)
         {
             _context = context;
             this.projetoListViewModel = _projetoListViewModel;
+            _emailService = emailService;
         }
 
 
@@ -78,7 +83,10 @@ namespace Sisat.Controllers
                 projetoListViewModel.Pacote.DirArquivo = caminhoArquivo;
                 _context.PacotesAtualizacoes.Add(projetoListViewModel.Pacote);
             }
+
             await _context.SaveChangesAsync();
+            await EnviarEmailParaUsuariosAsync(projetoListViewModel.Pacote.IdProj ?? 0);
+
             return RedirectToAction("Details", "Projetos", new { id = projetoListViewModel.Pacote.IdProj });
         }
 
@@ -120,23 +128,7 @@ namespace Sisat.Controllers
                 return RedirectToAction("Details", "Projetos", new { id = pacoteExistente.IdProj });
         }
 
-    //     if (arquivo != null && arquivo.Length > 0)
-    //                {
-    //                    var diretorioBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "arquivos");
-    //    var diretorioProjeto = Path.Combine(diretorioBase, projetoListViewModel.Pacote.IdProj.ToString());
-    //    var caminhoArquivo = Path.Combine(diretorioProjeto, arquivo.FileName);
-                 
-    //                    if (File.Exists(pacoteExistente.DirArquivo))
-    //                    {
-    //                        File.Delete(pacoteExistente.DirArquivo);
-               
-    //                    using (var stream = new FileStream(caminhoArquivo, FileMode.Create))
-    //                    {
-    //                        await arquivo.CopyToAsync(stream);
-    //}
 
-    //pacoteExistente.DirArquivo = caminhoArquivo;
-    //                }
 
 // GET: PacotesAtualizacoes/Delete/5
 public async Task<IActionResult> Delete(int? id)
@@ -213,6 +205,20 @@ public async Task<IActionResult> Delete(int? id)
             memoria.Position = 0;
 
             return File(memoria, GetContentType(filePath), Path.GetFileName(filePath));
+        }
+
+        public async Task EnviarEmailParaUsuariosAsync(long idProjeto)
+        {
+            var usuarios = _context.Usuario.Where(u => u.Conveniados.Any(c => c.ConvenioProjeto.Any(id => id.IdProj == idProjeto))).Include(c => c.Conveniados).ThenInclude(cp => cp.ConvenioProjeto).ToList();
+
+            foreach (var usuario in usuarios)
+            {
+                if (!string.IsNullOrEmpty(usuario.Email))
+                {
+                    await _emailService.SendEmailAsync(usuario.Email, "Atualização de Sistema", "Caro " + usuario.Nome + " uma nova atualização do sistema "
+                      + " encotra-se disponível. Solicitamos que mantenha nossos sistemas sempre atualizados na última versão disponibilzada. Atenciosamente, Admin SPAI- MPM/DF");
+                }
+            }
         }
 
         private string GetContentType(string path)

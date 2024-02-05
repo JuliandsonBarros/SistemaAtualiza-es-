@@ -15,7 +15,11 @@
                 <!-- Formulário para cadastro/alteração -->
                 <form asp-controller="Projetos" asp-action="Delete" method="post">
                     <input type="hidden" name="id" id="idProjetoDelete" />
-                    Deseja excluir o projeto @(Model.Projeto.NomProjeto)?
+                    <div class="form-group">
+                        <input type="hidden" asp-for="Projetos" name="id" id="idProjetoDelete" />
+                        <label> Deseja excluir o projeto @(Model.Projeto.NomProjeto) ?</label>
+                    </div>
+                  
                     <div class="modal-footer">
                         <div class="form-group">
                             <input type="submit" value="Excluir" class="btn btn-secondary" />

@@ -1,4 +1,6 @@
 using Sisat.Models;
+using Sisat.Service;
+using Sisat.Services.InterfaceService;
 using Sisat.ViewModels;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,7 @@ builder.Services.AddTransient<Usuario>();
 builder.Services.AddTransient<ForumViewModel>();
 builder.Services.AddTransient<LoginViewModel>();
 builder.Services.AddTransient<Forum>();
+builder.Services.AddTransient<IEmailService, EmailService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
