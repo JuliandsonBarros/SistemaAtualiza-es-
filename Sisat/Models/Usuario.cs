@@ -10,7 +10,7 @@ namespace Sisat.Models
         {
             Conveniados = new HashSet<Conveniados>();
             Forum = new HashSet<Forum>();
-            Respostas = new HashSet<RespostasForum>();
+            RespostasForum = new HashSet<RespostasForum>();
         }
 
         [Key]
@@ -39,7 +39,7 @@ namespace Sisat.Models
         [InverseProperty("IdAutorNavigation")]
         public virtual ICollection<Forum> Forum { get; set; }
         [InverseProperty("IdAutorNavigation")]
-        public virtual ICollection<RespostasForum> Respostas { get; set; }
+        public virtual ICollection<RespostasForum> RespostasForum { get; set; }
 
         public bool SenhaValida(string senha)
         {

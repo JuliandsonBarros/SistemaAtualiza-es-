@@ -84,8 +84,10 @@ namespace Sisat.Controllers
                 _context.PacotesAtualizacoes.Add(projetoListViewModel.Pacote);
             }
 
+            
             await _context.SaveChangesAsync();
             await EnviarEmailParaUsuariosAsync(projetoListViewModel.Pacote.IdProj ?? 0);
+
 
             return RedirectToAction("Details", "Projetos", new { id = projetoListViewModel.Pacote.IdProj });
         }
@@ -209,14 +211,13 @@ public async Task<IActionResult> Delete(int? id)
 
         public async Task EnviarEmailParaUsuariosAsync(long idProjeto)
         {
-            var usuarios = _context.Usuario.Where(u => u.Conveniados.Any(c => c.ConvenioProjeto.Any(id => id.IdProj == idProjeto))).Include(c => c.Conveniados).ThenInclude(cp => cp.ConvenioProjeto).ToList();
+            var usuarios = _context.Usuario.Where(u => u.Conveniados.Any(c => c.ConvenioProjeto.Any(id => id.IdProj == idProjeto))).Include(c => c.Conveniados).ThenInclude(cp => cp.ConvenioProjeto).ThenInclude(p => p.IdProjNavigation).ToList();
 
             foreach (var usuario in usuarios)
             {
                 if (!string.IsNullOrEmpty(usuario.Email))
                 {
-                    await _emailService.SendEmailAsync(usuario.Email, "Atualização de Sistema", "Caro " + usuario.Nome + " uma nova atualização do sistema "
-                      + " encotra-se disponível. Solicitamos que mantenha nossos sistemas sempre atualizados na última versão disponibilzada. Atenciosamente, Admin SPAI- MPM/DF");
+                    await _emailService.SendEmailAsync(usuario.Email, "Atualização de Sistema ", "Caro " + usuario.Nome + "<br>, Gostaríamos de informa-ló que uma nova atualização do sistema " + usuario.Conveniados.SelectMany(x => x.ConvenioProjeto).Select(x => x.IdProjNavigation).Where(x => x.IdProjeto == idProjeto).Select(x => x.NomProjeto).FirstOrDefault() + " está disponível.<br> É importante para manutenção, eficiência e segurança que nossos sistemas estejam<br> sempre atualizados com a última versão disponibilizada. Agradecemos sua atenção a este detalhe<br> e contamos com sua colaboração para manter nossos sistemas operando com exelência.<br>Atenciosamente, <br>Admin SPAI- MPM/DF"); 
                 }
             }
         }
