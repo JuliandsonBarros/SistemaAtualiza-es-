@@ -84,10 +84,10 @@ namespace Sisat.Controllers
                 _context.PacotesAtualizacoes.Add(projetoListViewModel.Pacote);
             }
 
-            
-            await _context.SaveChangesAsync();
             await EnviarEmailParaUsuariosAsync(projetoListViewModel.Pacote.IdProj ?? 0);
+            await _context.SaveChangesAsync();
 
+            TempData["SuccessMessage"] = "Atualização inserida com sussesso!";
 
             return RedirectToAction("Details", "Projetos", new { id = projetoListViewModel.Pacote.IdProj });
         }
@@ -98,7 +98,6 @@ namespace Sisat.Controllers
         {
 
             var pacoteExistente = _context.PacotesAtualizacoes.Find(projetoListViewModel.Pacote.IdPacote);
-
                 try
                 {
 
@@ -113,7 +112,7 @@ namespace Sisat.Controllers
 
                         _context.Update(pacoteExistente);
                         _context.SaveChanges();
-                    }
+                }
 
                 }
                 catch (DbUpdateConcurrencyException)
@@ -217,7 +216,7 @@ public async Task<IActionResult> Delete(int? id)
             {
                 if (!string.IsNullOrEmpty(usuario.Email))
                 {
-                    await _emailService.SendEmailAsync(usuario.Email, "Atualização de Sistema ", "Caro " + usuario.Nome + "<br>, Gostaríamos de informa-ló que uma nova atualização do sistema " + usuario.Conveniados.SelectMany(x => x.ConvenioProjeto).Select(x => x.IdProjNavigation).Where(x => x.IdProjeto == idProjeto).Select(x => x.NomProjeto).FirstOrDefault() + " está disponível.<br> É importante para manutenção, eficiência e segurança que nossos sistemas estejam<br> sempre atualizados com a última versão disponibilizada. Agradecemos sua atenção a este detalhe<br> e contamos com sua colaboração para manter nossos sistemas operando com exelência.<br>Atenciosamente, <br>Admin SPAI- MPM/DF"); 
+                    await _emailService.SendEmailAsync(usuario.Email, "Atualização de Sistema ", "Caro " + usuario.Nome + ",<br> Gostaríamos de informa-ló que uma nova atualização do sistema " + usuario.Conveniados.SelectMany(x => x.ConvenioProjeto).Select(x => x.IdProjNavigation).Where(x => x.IdProjeto == idProjeto).Select(x => x.NomProjeto).FirstOrDefault() + " está disponível.<br> É importante para manutenção, eficiência e segurança que nossos sistemas estejam sempre<br> atualizados com a última versão disponibilizada. <br>Agradecemos sua atenção a este detalhe, contamos com sua colaboração para <br> manter nossos sistemas operando com exelência.<br><br><br>Atenciosamente, <br><br><br>Admin SPAI- MPM/DF"); 
                 }
             }
         }

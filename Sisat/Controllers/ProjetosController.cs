@@ -83,7 +83,9 @@ namespace Sisat.Controllers
             _context.Projetos.Add(projeto);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Details", "Projetos", new { id = projeto.IdProjeto, createProjeto = true });
+            TempData["SuccessMessage"] = "Projeto Criado com sussesso!";
+
+            return RedirectToAction("Details", "Projetos", new { id = projeto.IdProjeto });
         }
 
         [HttpPost]
@@ -98,6 +100,8 @@ namespace Sisat.Controllers
                 _context.Update(projetoExistente);
                 _context.SaveChanges();
             }
+
+            TempData["SuccessEdit"] = "Projeto editado com sussesso!";
 
             return RedirectToAction("Index", "Projetos");
         }
@@ -136,6 +140,9 @@ namespace Sisat.Controllers
             }
 
             await _context.SaveChangesAsync();
+
+            TempData["SuccessDelete"] = "Projeto excluído com sussesso!";
+
             return RedirectToAction(nameof(Index));
         }
 

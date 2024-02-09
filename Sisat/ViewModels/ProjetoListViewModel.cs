@@ -23,7 +23,7 @@ namespace Sisat.ViewModels
         {
             Projeto = new Projetos();
             Pacotes = new List<PacotesAtualizacoes>();
-            Pacote = new();
+            Pacote = new PacotesAtualizacoes();
             Projetos = new List<Projetos>();
             NivelAcess = new NivelDeAcesso();
             Conveniado = new Conveniados();

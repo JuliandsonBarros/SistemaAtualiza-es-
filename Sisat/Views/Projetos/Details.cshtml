@@ -5,6 +5,7 @@
     ViewData["Title"] = "Projeto";
 }
 
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -17,18 +18,24 @@
                     <ol class="breadcrumb float-sm-right">
                     </ol>
                 </div><!-- /.col -->
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div id="successMessage" class="alert alert-success" style="position: fixed; right: 20px; top: 60px;z-index: 1000; width: 18%; text-align: center ">
+                        @TempData["SuccessMessage"]
+                    </div>
+                }
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
 
 
-    @if (Model.CondicaoMsg == true)
+ @*    @if (Model.CondicaoMsg == true)
     {
         <div>
             <label>Projeto Cadastrado</label>
         </div>
 
-    }
+    } *@
 
 
     <div class="content">
@@ -147,6 +154,14 @@
 
         $('#regAlt').val(registro);
     }
+
+    window.onload = function () {
+        if (document.getElementById("successMessage")) {
+            setTimeout(function () {
+                document.getElementById("successMessage").style.display = 'none';
+            }, 4000);
+        }
+    };
 </script>
 
 

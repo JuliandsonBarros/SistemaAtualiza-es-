@@ -28,6 +28,8 @@ namespace Sisat.Controllers
                   .OrderBy(f => f.DataResposta)
                   .ToList();
 
+            ViewData["Title"] = "Forum";
+
             return View(_forumViewModel);
         }
 

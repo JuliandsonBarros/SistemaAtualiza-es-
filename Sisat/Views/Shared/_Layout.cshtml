@@ -22,13 +22,35 @@
 
 </head>
 
-<body style="margin-top:0">
+<body style="margin-top: 0px; height:auto">
+
+    @{
+        bool hideFooter = ViewData["Title"].ToString() == "Forum";
+        bool hideFooterRespostas = ViewData["Title"].ToString() == "RespostasForum";
+    }
 
     <partial name="_Navbar" model="@Model" />
     <partial name="_Sidebar" />
 
     @RenderBody()
-    <partial name="_Footer" />
+
+    <partial name="_Footer"/>
+
+    @if (!hideFooter)
+    {
+        <footer class="main-footer sidebar-dark-primary elevation-4 " style="height:10%;padding: 10px 0; text-align: center;  margin-bottom:0; margin-left:auto;  position: fixed; bottom: 0; width: 100%;padding: 10px 0;text-align: center;">
+            <div class="container">
+                <div class="float-right d-none d-sm-inline">
+                    <!-- Conteúdo opcional à direita do footer -->
+                </div>
+                <strong>&copy; 2023/2024</strong>
+                <h3>Spai - Ministério Público Militar</h3>
+            </div>
+        </footer>
+    }
+    
+
+
 
     <script>
         function showInputField() {

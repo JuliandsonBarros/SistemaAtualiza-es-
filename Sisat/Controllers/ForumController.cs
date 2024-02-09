@@ -23,9 +23,13 @@ namespace Sisat.Controllers
         public IActionResult Index()
         {
             _forumViewModel.Foruns = _context.Forum
-                   .Include(x => x.IdAutorNavigation)
-                        .OrderBy(f => f.DataPostagem)
-                        .ToList();
+                 .Include(f => f.IdAutorNavigation)
+                  .ThenInclude(u => u.Conveniados)
+                    .Include(f => f.RespostasForum)
+                     .OrderBy(f => f.DataPostagem)
+                  .ToList();
+
+            ViewData["Title"] = "Forum";
 
             return View(_forumViewModel);
         }

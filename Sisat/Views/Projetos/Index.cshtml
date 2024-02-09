@@ -4,12 +4,6 @@
 }
 
 <div class="content-wrapper">
-   @*  <div class="col-md-12">
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <i class="uil uil-check me-2"></i><a class="alert-link">Atenção</a> o diretório para download/exclusão do arquivo não existe.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    </div> *@
     <div class="content-header" style="margin-left:1%;">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -23,6 +17,18 @@
                     <ol class="breadcrumb float-sm-right">
                     </ol>
                 </div>
+                @if (TempData["SuccessDelete"] != null)
+                {
+                    <div id="successMessage" class="alert alert-danger" style="position: fixed; right: 20px; top: 60px;z-index: 1000; width: 18%; text-align: center ">
+                        @TempData["SuccessDelete"]
+                    </div>
+                }
+                @if (TempData["SuccessEdit"] != null)
+                {
+                    <div id="successMessage" class="alert alert-success" style="position: fixed; right: 20px; top: 60px;z-index: 1000; width: 18%; text-align: center ">
+                        @TempData["SuccessEdit"]
+                    </div>
+                }
             </div>
         </div>
     </div>
@@ -48,7 +54,7 @@
                                                             @if (item.UltimoPacote != null && item.UltimoPacote.NumVersao != null)
                                                             {
                                                                 @item.UltimoPacote.NumVersao
-                                                                <button type="button" class="ml-1" style="border:hidden;" onclick="CarregarProjeto('@item.Projeto.NomProjeto','@item.Projeto.IdProjeto')" data-toggle="modal" data-target="#projectModalEditarProjeto"><i class="fa-solid  fa-pen-to-square cor-icon-edit"></i></button>
+                                                            <button type="button" class="ml-1" style="border:hidden;" onclick="CarregarProjeto('@item.Projeto.NomProjeto','@item.Projeto.IdProjeto')" data-toggle="modal" data-target="#projectModalEditarProjeto"><i class="fa-solid  fa-pen-to-square cor-icon-edit"></i></button>
                                                             }
                                                             else
                                                             {
@@ -82,12 +88,18 @@
         $('#proj').val(projeto);
         $('#idProjeto').val(idProjeto);
     }
-</script>
 
-<script>
     function CarregarProjetoDelete(idProjetoDelete) {
         $('#idProjetoDelete').val(idProjetoDelete);
     }
+
+    window.onload = function () {
+        if (document.getElementById("successMessage")) {
+            setTimeout(function () {
+                document.getElementById("successMessage").style.display = 'none';
+            }, 4000);
+        }
+    };
 </script>
 
 
